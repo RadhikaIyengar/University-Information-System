@@ -45,6 +45,7 @@ It provides easy-to-use endpoints, Swagger API documentation, and a modern web i
 ## Project Structure
 ```bash
 .
+├── assets                  # includes images for use
 ├── Database
 │   └── connection.py        # Database Connections
 ├── models
@@ -98,7 +99,7 @@ All APIs support pagination via:
 **page_size(default = 10)**
 
 **Common JSON response structure**
-
+```bash
 {
   "code": 1,
   "msg": "Success",
@@ -107,7 +108,7 @@ All APIs support pagination via:
     "total": 0
   }
 }
-
+```
 🧬 Departments
 Endpoint: /departments
 
