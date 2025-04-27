@@ -1,9 +1,9 @@
-<h1 align = "center">University Information System APIs<h1>
-This is a Flask-based REST API project for accessing university departments, students, and courses data from a MySQL database.  
-It provides easy-to-use endpoints, Swagger API documentation, and a modern web interface for testing.
+<h1 align = "center">🎓 University Management System APIs<h1>
+<h3>This is a Flask-based REST API project for accessing university departments, students, and courses data from a MySQL database.  
+It provides easy-to-use endpoints, Swagger API documentation, and a modern web interface for testing.</h3>
 
 ---
-##Features
+##🚀 Features
 - RESTful API GET endpoints for:
   - **Departments** with instructor details
   - **Students** with course enrollment details
@@ -16,55 +16,60 @@ It provides easy-to-use endpoints, Swagger API documentation, and a modern web i
 
 ---
 
-## Prerequisites
+## 📦 Prerequisites
 
 - Python 3.x
 - MySQL database (with university data loaded)
 - `pip` package manager
 
 ---
+
+## 🛠 Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/RadhikaIyengar/University-Information-System.git
+   cd <project-directory> 
+
 ## How to Run the code?
 
 - Create and activate a virtual environment
 
-python -m venv venv
-# On Windows: venv\Scripts\activate
-
+- python -m venv venv
+- On Windows: venv\Scripts\activate
 - Install dependencies:
- 
- pip install -r requirements.txt
-
+    - pip install -r requirements.txt
 - Configure connection.py file with correct MySQL credentials (host, username, password, database name).
 
 
 ## Project Structure
 .
-├───Database
-│   └───connection.py(Database Connections)
-├───models
-│   └───courses.py
-    └───departments.py
-    └───students.py
-├───routes
-│   └───courses_routes.py
-    └───departments_routes.py
-    └───students_routes.py
-├───static
-    └───styles.css
-├───templates
-    └───home.html (Homepage)
-└───utils
-    └───pagination.py
-├───app.py
-├───README.md
-├───requirements.txt
+├── Database
+│   └── connection.py        # Database Connections
+├── models
+│   ├── courses.py           # Courses Model
+│   ├── departments.py       # Departments Model
+│   └── students.py          # Students Model
+├── routes
+│   ├── courses_routes.py    # Courses Routes
+│   ├── departments_routes.py # Departments Routes
+│   └── students_routes.py   # Students Routes
+├── static
+│   └── styles.css           # Stylesheet for the Web Interface
+├── templates
+│   └── home.html            # Homepage (Web Interface)
+├── utils
+│   └── pagination.py        # Pagination Logic
+├── app.py                   # Main Flask App
+├── README.md                # Project Documentation
+└── requirements.txt         # Python Dependencies
 
 
 ## To run the Application
 
-- Start the flask server by typing the following command in the terminal
+- Start the flask server by typing the following command in the terminal -
 
--- python app.py
+- python app.py
 
 - Access the endpoints:
 
@@ -73,19 +78,15 @@ python -m venv venv
 **Swagger API Documentation: http://127.0.0.1:5000/apidocs/**
 
 🔥 Web Interface
-The web interface provides:
+The web interface provides quick links to:
 
-University Portal Theme 🎓
+- Departments API
 
-Quick links to:
+- Students API
 
-Departments API
+- Courses API
 
-Students API
-
-Courses API
-
-Embedded Swagger API documentation
+- Embedded Swagger API documentation
 
 ## API Endpoints
 
