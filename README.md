@@ -43,27 +43,8 @@ It provides easy-to-use endpoints, Swagger API documentation, and a modern web i
 
 
 ## Project Structure
-.
-├── Database
-│   └── connection.py        # Database Connections
-├── models
-│   ├── courses.py           # Courses Model
-│   ├── departments.py       # Departments Model
-│   └── students.py          # Students Model
-├── routes
-│   ├── courses_routes.py    # Courses Routes
-│   ├── departments_routes.py # Departments Routes
-│   └── students_routes.py   # Students Routes
-├── static
-│   └── styles.css           # Stylesheet for the Web Interface
-├── templates
-│   └── home.html            # Homepage (Web Interface)
-├── utils
-│   └── pagination.py        # Pagination Logic
-├── app.py                   # Main Flask App
-├── README.md                # Project Documentation
-└── requirements.txt         # Python Dependencies
 
+![Project Structure](assets\Project Structure.png)
 
 ## To run the Application
 
