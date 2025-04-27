@@ -43,9 +43,29 @@ It provides easy-to-use endpoints, Swagger API documentation, and a modern web i
 
 
 ## Project Structure
+```bash
+.
+├── Database
+│   └── connection.py        # Database Connections
+├── models
+│   ├── courses.py           # Courses Model
+│   ├── departments.py       # Departments Model
+│   └── students.py          # Students Model
+├── routes
+│   ├── courses_routes.py    # Courses Routes
+│   ├── departments_routes.py # Departments Routes
+│   └── students_routes.py   # Students Routes
+├── static
+│   └── styles.css           # Stylesheet for the Web Interface
+├── templates
+│   └── home.html            # Homepage (Web Interface)
+├── utils
+│   └── pagination.py        # Pagination Logic
+├── app.py                   # Main Flask App
+├── README.md                # Project Documentation
+└── requirements.txt         # Python Dependencies
 
-![Project Structure](assets\Project Structure.png)
-
+```
 ## To run the Application
 
 - Start the flask server by typing the following command in the terminal -
@@ -106,3 +126,24 @@ Returns: List of courses and teaching instructors.
 ⚙️ Dependencies
 Flask - Web framework
 Flasgger - Swagger API Documentation
+
+## 📸 Screenshots
+
+1. Main Webpage
+![Main Portal](assets/Main.png)
+
+---
+2. Department API
+![Department API Output](assets/Department.png)
+
+---
+3. Student API
+![Student API Output](assets/Student.png)
+
+---
+3. Course API
+![Courses API Output](assets/courses.png)
+
+---
+4. Swagger API Documentation
+![Swagger API](assets/swagger.png)
