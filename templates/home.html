@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>University Information System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>University Information System</h1>
+        <div class="author">Developed by - Radhika Srinivasan Iyengar</div>
+    </header>
+
+    <main>
+        <h2 class="subheading">Let's explore some APIs!</h2> 
+
+        <!-- Department Section with heading and description -->
+        <section class="api-section">
+            <h3>Department</h3>
+            <p>Click below to see available information regarding various departments of the university along with their associated instructors</p>
+            <a href="/departments?page=1&page_size=10">/departments</a> 
+        </section>
+
+        <!-- Students Section with heading and description -->
+        <section class="api-section">
+            <h3>Students</h3>
+            <p>Click below to view information about various students who have enrolled into various courses at our university!</p>
+            <a href="/students?page=1&page_size=10">/students</a>
+        </section>
+
+        <!-- Courses Section with heading and description -->
+        <section class="api-section">
+            <h3>Courses</h3>
+            <p>Click below to see information about various courses and the instructors who teach these courses.</p>
+            <a href="/courses?page=1&page_size=10">/courses</a>
+        </section>
+    </main>
+
+</body>
+</html>

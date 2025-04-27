@@ -1,0 +1,100 @@
+/* Global styles for the body element */
+body {
+    font-family: Arial, sans-serif; 
+    background:beige;            
+    margin: 0;                    
+    padding: 0;                     
+    height: 100vh;                
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for the header element */
+header {
+    background-color:burlywood; 
+    color: black;             
+    padding: 10px;             
+    text-align: center;    
+    position: fixed;           
+    top: 0;                   
+    left: 0;                  
+    width: 100%;
+    z-index: 10;              
+    box-sizing: border-box;    
+}
+
+/* Styling for the author info within the header */
+header .author {
+    position: absolute;        
+    top: 40px;                
+    right: 30px;           
+    font-size: 16px;          
+    font-style: italic;        
+    color:white;      
+    }
+
+/* Remove default margin for the main heading */
+h1 {
+    margin: 0;
+    font-size: 28px;          
+}
+
+/* Styling for the subheading (added below the main heading) */
+.subheading {
+    font-size: 20px;             
+    font-weight: bold;          
+    text-align: center;         
+    color:brown;              
+    margin-top: 20px;            
+    margin-bottom: 15px;   
+}
+
+/* Styling for the main content container */
+main {
+    width: 90%;                       
+    height: 500px;                  
+    margin: 100px auto 0;              
+    padding: 15px;                   
+    background-color: white;          
+    border-radius: 10px;               
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+   
+
+}
+
+/* Styling for individual API section */
+.api-section {
+    margin-bottom: 20px; 
+}
+
+/* Styling for section titles */
+.api-section h3 {
+    font-size: 20px; 
+    font-weight: bold;
+    color: black; 
+}
+
+/* Styling for section paragraphs */
+.api-section p {
+    font-size: 14px; 
+    font-style: italic;
+    color: black; 
+    margin-bottom: 10px; 
+}
+
+/* Styling for anchor links */
+a {
+    display: inline-block;            
+    margin: 8px 0;                  
+    font-size: 16px;                   
+    color: brown;                  
+    text-decoration: none;             
+    border-left: 2px solid black;     
+    padding-left: 10px;                
+}
+
+/* Styling for anchor links on hover */
+a:hover {
+    background-color: #eef4fc;         
+    cursor: pointer;                    
+}
