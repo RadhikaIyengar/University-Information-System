@@ -52,7 +52,7 @@ h1 {
 /* Styling for the main content container */
 main {
     width: 90%;                       
-    height: 500px;                  
+    height: 550px;                  
     margin: 100px auto 0;              
     padding: 15px;                   
     background-color: white;          
@@ -98,3 +98,14 @@ a:hover {
     background-color: #eef4fc;         
     cursor: pointer;                    
 }
+.swagger-link {
+    top: 10px;
+    right: 10px;
+    background-color:burlywood;
+    color: white;
+    padding: 5px;
+    border: none;
+    text-decoration: none;
+}
+.swagger-link:hover {
+    background-color: brown}

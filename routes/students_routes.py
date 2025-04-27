@@ -1,4 +1,5 @@
 from flask import Blueprint, request,jsonify
+from flasgger import swag_from
 from models.students import get_students_with_courses
 from utils.pagination import paginate
 import logging
@@ -11,6 +12,74 @@ students_bp = Blueprint('students',__name__)
 
 
 @students_bp.route('/students', methods=['GET'])
+@swag_from({
+    'tags': ['Students'],
+    'description': 'Returns list of students with enrolled courses.',
+    'parameters': [
+        {
+            'name': 'page',
+            'in': 'query',
+            'type': 'integer',
+            'description': 'Page number for pagination',
+            'default': 1,
+        },
+        {
+            'name': 'page_size',
+            'in': 'query',
+            'type': 'integer',
+            'description': 'Number of records per page',
+            'default': 10,
+        }
+    ],
+    'responses': {
+        '200': {
+            'description': 'List of students with enrolled courses',
+            'schema': {
+                'type': 'object',
+                'properties': {
+                    'code': {'type': 'integer'},
+                    'msg': {'type': 'string'},
+                    'data': {
+                        'type': 'object',
+                        'properties': {
+                            'records': {
+                                'type': 'array',
+                                'items': {
+                                    'type': 'object',
+                                    'properties': {
+                                        'student_id': {'type': 'integer'},
+                                        'name': {'type': 'string'},
+                                        'courses': {
+                                            'type': 'array',
+                                            'items': {
+                                                'type': 'object',
+                                                'properties': {
+                                                    'course_id': {'type': 'integer'},
+                                                    'course_name': {'type': 'string'},
+                                                    'instructor': {'type': 'string'}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            'total': {'type': 'integer'}
+                        }
+                    }
+                }
+            }
+        },
+        '400': {
+            'description': "Error: 'page' and 'page_size' must be integers."
+        },
+        '404': {
+            'description': 'Error: No students found.'
+        },
+        '500': {
+            'description': 'Error: Unable to fetch student data from the database.'
+        }
+    }
+})
 def students():
     try:
         # Get 'page' and 'page_size' from the request, with defaults
@@ -77,7 +146,7 @@ def students():
         })
 
     except Exception as e:
-        # If an unexpected error occurs, log the error and return a generic error message
+        # If an unexpected error occurs, log the error and return a error message
         logging.error(f"An unexpected error occurred: {e}")
         return jsonify({
             "code": 0,

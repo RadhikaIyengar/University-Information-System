@@ -4,7 +4,6 @@ def get_courses_with_instructors():
     conn = get_connection()
     cursor = conn.cursor(dictionary=True)
     
-    # Step 1: Fetch all courses
     course_query = """
         SELECT course_id, title, dept_name, credits
         FROM course
@@ -14,7 +13,6 @@ def get_courses_with_instructors():
 
     courses = {}
 
-    # Step 2: For each course, fetch its instructors from teaches + instructor
     for course in courses_data:
         course_id = course['course_id']
 

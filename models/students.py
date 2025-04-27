@@ -9,19 +9,17 @@ def get_students_with_courses():
     s.ID, 
     s.name, 
     s.dept_name, 
-    s.tot_cred,
     c.course_id, 
-    c.title, 
-    c.credits,
-    sec.sec_id AS section_id, 
-    sec.semester, 
-    sec.year
+    t.sec_id AS section_id, 
+    t.semester, 
+    t.year
 FROM 
     student s
 LEFT JOIN 
-    course c ON s.dept_name = c.dept_name  -- Join student table with course table based on dept_name
+    takes t ON s.ID = t.ID  
 LEFT JOIN 
-    section sec ON c.course_id = sec.course_id
+    course c ON t.course_id = c.course_id 
+
     """
     cursor.execute(query)
     data = cursor.fetchall()

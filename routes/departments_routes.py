@@ -1,4 +1,5 @@
 from flask import Blueprint, request,jsonify
+from flasgger import swag_from
 from models.departments import get_departments_with_instructors
 from utils.pagination import paginate
 import logging
@@ -9,6 +10,73 @@ logging.basicConfig(level=logging.ERROR)
 departments_bp = Blueprint('departments',__name__)
 
 @departments_bp.route('/departments', methods=['GET'])
+@swag_from({
+    'tags': ['Departments'],
+    'description': 'Returns list of departments with associated instructors.',
+    'parameters': [
+        {
+            'name': 'page',
+            'in': 'query',
+            'type': 'integer',
+            'description': 'Page number for pagination',
+            'default': 1,
+        },
+        {
+            'name': 'page_size',
+            'in': 'query',
+            'type': 'integer',
+            'description': 'Number of records per page',
+            'default': 10,
+        }
+    ],
+    'responses': {
+        '200': {
+            'description': 'List of departments with associated instructors',
+            'schema': {
+                'type': 'object',
+                'properties': {
+                    'code': {'type': 'integer'},
+                    'msg': {'type': 'string'},
+                    'data': {
+                        'type': 'object',
+                        'properties': {
+                            'records': {
+                                'type': 'array',
+                                'items': {
+                                    'type': 'object',
+                                    'properties': {
+                                        'department_id': {'type': 'integer'},
+                                        'name': {'type': 'string'},
+                                        'instructors': {
+                                            'type': 'array',
+                                            'items': {
+                                                'type': 'object',
+                                                'properties': {
+                                                    'instructor_id': {'type': 'integer'},
+                                                    'name': {'type': 'string'}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            'total': {'type': 'integer'}
+                        }
+                    }
+                }
+            }
+        },
+        '400': {
+            'description': "Error: 'page' and 'page_size' must be integers."
+        },
+        '404': {
+            'description': 'Error: No departments found.'
+        },
+        '500': {
+            'description': 'Error: Unable to fetch department data from the database.'
+        }
+    }
+})
 def departments():
     try:
         # Get 'page' and 'page_size' from the request, with defaults
@@ -75,7 +143,7 @@ def departments():
         })
 
     except Exception as e:
-        # If an unexpected error occurs, log the error and return a generic error message
+        # If an unexpected error occurs, log the error and return a error message
         logging.error(f"An unexpected error occurred: {e}")
         return jsonify({
             "code": 0,
