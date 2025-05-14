@@ -216,12 +216,12 @@ Duplicate entries avoided using filters before insert.
 ## 📸 Screenshots for the Redis and MongoDB Functionalities
 
 1. Storing Data in Redis
-![Redis Data](assets/Redis_Data_Storage)
+![Redis Data](assets/Redis_Data_Storage.png)
 
 ---
 
 2. Storing Data in MongoDB
-![MongoDB Data](assets/Mongodb_data_store)
+![MongoDB Data](assets/Mongodb_data_store.png)
 
 
 
