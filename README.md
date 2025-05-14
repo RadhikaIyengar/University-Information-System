@@ -58,6 +58,13 @@ It provides easy-to-use endpoints, Swagger API documentation, and a modern web i
 │   └── students_routes.py   # Students Routes
 ├── static
 │   └── styles.css           # Stylesheet for the Web Interface
+├── storage     
+│   └── _init_.py
+    └── mongodb_connection.py #Mongodb connection
+    └──redis_connection.py    #Redis Connection
+    └──retrieve_mongo.py      #For Retrieving mongodb data
+    └──retieve_redis.py       #For retrieving redis data
+    └──store_data.py          #For storing data in redis and mongodb
 ├── templates
 │   └── home.html            # Homepage (Web Interface)
 ├── utils
