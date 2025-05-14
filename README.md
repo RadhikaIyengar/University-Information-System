@@ -148,3 +148,5 @@ Flasgger - Swagger API Documentation
 ---
 4. Swagger API Documentation
 ![Swagger API](assets/swagger.png)
+
+📦 "Part 2: Data Storage Integration using Redis and MongoDB"
